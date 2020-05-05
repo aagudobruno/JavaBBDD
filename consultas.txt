@@ -1,0 +1,33 @@
+select * from bar
+ | Down Under Pub | 802 W. Main Street |
+ | James Joyce Pub | 912 W. Main Street |
+ | Satisfaction | 905 W. Main Street |
+ | Talk of the Town | 108 E. Main Street |
+ | The Edge | 108 Morris Street |
+
+select * from bar where name like '%b%'
+ | Down Under Pub | 802 W. Main Street |
+ | James Joyce Pub | 912 W. Main Street |
+
+select * from bar where name like '%b' ' OR ''='
+
+select * from likes where drinker ='Amy' ' OR ''='
+
+select * from likes where drinker ='Amy OR ''='
+
+select * from likes where drinker ='Amy; SELECT * FROM SERVES'
+
+select * from bar where name='bb' + "or '1=1'"
+ | Down Under Pub | 802 W. Main Street |
+ | James Joyce Pub | 912 W. Main Street |
+ | Satisfaction | 905 W. Main Street |
+ | Talk of the Town | 108 E. Main Street |
+ | The Edge | 108 Morris Street |
+
+select * from bar where name='bb' + " select * from serves"
+ | Down Under Pub | 802 W. Main Street |
+ | James Joyce Pub | 912 W. Main Street |
+ | Satisfaction | 905 W. Main Street |
+ | Talk of the Town | 108 E. Main Street |
+ | The Edge | 108 Morris Street |
+
